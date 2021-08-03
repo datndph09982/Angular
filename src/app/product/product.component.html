@@ -1,0 +1,41 @@
+<!-- <p class="text-red-500">{{product.name}}</p> -->
+<!-- <p><img src="{{product.description}}"/></p> -->
+<!-- <p>{{product.price}}</p> -->
+<!-- <p>{{product.status ? 'còn hàng' : 'hết hàng' }}</p> -->
+<!-- <button type="submit" class="border-black border bg-green-500 hover:bg-green-700 hover:bg-black active:text-white" [disabled]="product.status">Clickme</button> -->
+<!-- <button type="button" class="border-black border bg-green-500 active:bg-green-700" (click)="onHandleClick()">Change</button> -->
+<br>
+<!-- <input type="text" class="border border-black" (keypress)="onHandleKeyPress($event)"> -->
+<br>
+<!-- <input type="text" class="border border-black" [(ngModel)]="product.name" > -->
+<!-- <button (click)="changeStatus()">Clickme</button>
+<div *ngIf="status">noi dung duoc hien thi</div> -->
+<div class="">
+<table  class="border-collapse border border-green-800 bg-green-200">
+    <thead>
+        <tr class="bg-green-300">
+            <th class="border border-green-600 p-3">name</th>
+            <th class="border border-green-600 p-3">price</th>
+            <th class="border border-green-600 p-3">description</th>
+            <th class="border border-green-600 p-3">quantity</th>
+            <th class="border border-green-600 p-3">category</th>
+            <th class="border border-green-600 p-3">action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td class="border border-green-600 px-3">{{product.name}}</td>
+            <td class="border border-green-600 px-3">{{product.price}}</td>
+            <td class="border border-green-600 px-3">{{product.description}}</td>
+            <td class="border border-green-600 px-3">{{product.quantity}}</td>
+            <td class="border border-green-600 px-3">{{product.category}}</td>
+
+            <td class="px-3">
+                <button class="border border-green-600 px-3 " routerLink="/product/{{product.id}}">Detail</button>
+                <button class="border border-green-600 px-3"  (click)="onHandleRemove(product.id)">Delete</button>
+                <button class="border border-green-600 px-3" routerLink="/product/edit/{{product.id}}">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
